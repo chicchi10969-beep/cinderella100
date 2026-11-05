@@ -754,6 +754,17 @@ header{background:linear-gradient(180deg,#2e2522 0%,#221b18 100%)!important;bord
 .fade{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
 .fade.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.fade{opacity:1;transform:none}.stars i,.dust{animation:none}}
+
+/* green apple mark (2026-11-06) */
+.logo small .gapple{display:inline-block;width:15px;height:16px;margin-left:6px;vertical-align:-3px;transform-origin:50% 90%;animation:gaRoll 7s ease-in-out infinite;filter:drop-shadow(0 1px 1.5px rgba(80,60,20,.3))}
+@keyframes gaRoll{0%,70%,100%{transform:rotate(-16deg)}78%{transform:translateX(3px) rotate(14deg)}86%{transform:translateX(1px) rotate(-6deg)}92%{transform:rotate(-16deg)}}
+@media(prefers-reduced-motion:reduce){.logo small .gapple{animation:none}}
+
+/* Mrs. GREEN APPLE note (2026-11-06) */
+.cw .cw-mga{margin:2.4em auto 0;max-width:30em;padding:22px 18px 18px;text-align:center;border-top:1px solid rgba(201,169,97,.55);border-bottom:1px solid rgba(201,169,97,.55);position:relative}
+.cw .cw-mga .mga{display:block;width:22px;height:23px;margin:0 auto 10px;transform:rotate(-14deg);filter:drop-shadow(0 1px 1.5px rgba(80,60,20,.3))}
+.cw .cw-mga p{margin:0;font-size:14px;line-height:2.05;color:#5a4f6e;letter-spacing:.04em}
+@media(max-width:600px){.cw .cw-mga p{font-size:13px}}
 </style>
 </head>
 <body>
@@ -795,7 +806,7 @@ header{background:linear-gradient(180deg,#2e2522 0%,#221b18 100%)!important;bord
 
 <header>
   <div class="in">
-    <a href="#top" class="logo"><i class="lg-gold" role="img" aria-label="mieuque."></i><small>神経整体サロン ミューク 守口院</small></a>
+    <a href="#top" class="logo"><i class="lg-gold" role="img" aria-label="mieuque."></i><small>神経整体サロン ミューク 守口院<svg class="gapple" viewBox="0 0 40 42" aria-hidden="true"><defs><radialGradient id="gaf" cx=".38" cy=".34" r=".8"><stop offset="0" stop-color="#EEF2DA"/><stop offset=".55" stop-color="#C6D29E"/><stop offset="1" stop-color="#93A86B"/></radialGradient><linearGradient id="gag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e7bf"/><stop offset=".5" stop-color="#d4b06a"/><stop offset="1" stop-color="#a8823f"/></linearGradient><linearGradient id="gal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B7C98C"/><stop offset="1" stop-color="#6F8A4E"/></linearGradient></defs><path d="M20 13 C19.6 9 20.6 5.5 22.6 3" fill="none" stroke="url(#gag)" stroke-width="2" stroke-linecap="round"/><path d="M22.2 6.4 C25.6 2.6 31 2.8 33 4.8 C30.2 7.8 25.6 8.6 22.2 6.4 Z" fill="url(#gal)"/><path d="M20 13.5 C15 8.5 3.5 9 2.5 20.5 C1.8 30 8 39.5 15 40 C17.4 40.2 18.6 39 20 39 C21.4 39 22.6 40.2 25 40 C32 39.5 38.2 30 37.5 20.5 C36.5 9 25 8.5 20 13.5 Z" fill="url(#gaf)" stroke="url(#gag)" stroke-width="1.6"/><ellipse cx="11" cy="19" rx="3.6" ry="2.2" transform="rotate(-30 11 19)" fill="#fff" opacity=".5"/></svg></small></a>
     <div class="hr">
       <div class="fsw" role="group" aria-label="文字の大きさ">
         <span class="fl">文字</span>
@@ -1013,6 +1024,7 @@ header{background:linear-gradient(180deg,#2e2522 0%,#221b18 100%)!important;bord
       <p><span class="nw">いつか人生を振り返ったとき、</span><br><span class="nw">「あのとき、</span><span class="nw">あそこへ行ってよかった」と</span><br><span class="nw">思い出してもらえるような。</span></p>
       <p><span class="nw">ミュークが、</span><span class="nw">そんな出会いのひとつになれたら。</span></p>
       <p class="cw-end">それが、<br>シンデレラ100人計画を始める理由です。</p>
+      <div class="cw-mga"><svg class="mga" viewBox="0 0 40 42" aria-hidden="true"><path d="M20 13 C19.6 9 20.6 5.5 22.6 3" fill="none" stroke="url(#gag)" stroke-width="2" stroke-linecap="round"/><path d="M22.2 6.4 C25.6 2.6 31 2.8 33 4.8 C30.2 7.8 25.6 8.6 22.2 6.4 Z" fill="url(#gal)"/><path d="M20 13.5 C15 8.5 3.5 9 2.5 20.5 C1.8 30 8 39.5 15 40 C17.4 40.2 18.6 39 20 39 C21.4 39 22.6 40.2 25 40 C32 39.5 38.2 30 37.5 20.5 C36.5 9 25 8.5 20 13.5 Z" fill="url(#gaf)" stroke="url(#gag)" stroke-width="1.6"/><ellipse cx="11" cy="19" rx="3.6" ry="2.2" transform="rotate(-30 11 19)" fill="#fff" opacity=".5"/></svg><p><span class="nw">大好きな Mrs. GREEN APPLE の</span><span class="nw">『シンデレラ』から生まれた企画です。</span><br><span class="nw">痛みも弱さも、</span><span class="nw">ぜんぶあなたの人生の深み。</span><br><span class="nw">傷ついてきた今のあなたこそが、</span><span class="nw">物語の主人公です。</span></p></div>
     </div>
   </div>
 </section>
