@@ -836,9 +836,120 @@ header{background:linear-gradient(180deg,#2e2522 0%,#221b18 100%)!important;bord
     <a href="#faq"><svg class="ms" viewBox="0 0 64 40" aria-hidden="true"><use href="#slip"/></svg>お支払い・よくある質問</a>
     <a href="#contact"><svg class="ms" viewBox="0 0 64 40" aria-hidden="true"><use href="#slip"/></svg>ご予約・お問い合わせ</a>
     <a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%AF%20%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%AE%88%E5%8F%A3%E5%B8%82%E6%A2%85%E5%9C%92%E7%94%BA2-4%20%E6%A2%85%E5%9C%92%E3%83%86%E3%83%A9%E3%82%B9%E3%83%8F%E3%82%A6%E3%82%B9303" target="_blank" rel="noopener" class="mr">★ 口コミはこちら（Googleマップ）</a>
+    <a href="#wm-family">ウェルネスミュークのなかま</a>
     <a href="https://lin.ee/SBqauMf" target="_blank" rel="noopener" class="ml">公式LINEで予約・相談</a>
   </nav>
 </header>
+<!-- ===== ウェルネスミューク 共通案内パーツ（ここから） =====
+  入口・メンバー・リンクを直すときは、下の WM_DATA だけを書き換える。
+  3つのLPに同じものが入っている。data-page でそのページを指定：
+    lulu / cinderella / jouka
+  lulu・cinderella のページには浄化整体は出ない（show で制御）。
+-->
+<div id="wm-family" class="wm" data-page="cinderella">
+<style>
+.wm{--wm-bg:#F6F1E9;--wm-ink:#3b3431;--wm-soft:#6d635d;--wm-gold:#b08a4f;--wm-line:rgba(176,138,79,.45);
+  position:relative;z-index:45;background:var(--wm-bg);color:var(--wm-ink);border-bottom:1px solid var(--wm-line);
+  font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;letter-spacing:.04em;line-height:1.7;
+  word-break:auto-phrase;text-wrap:pretty}
+.wm *{box-sizing:border-box}
+.wm-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:1080px;margin:0 auto;padding:8px 16px}
+.wm-name{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 10px;font-size:14px}
+.wm-name b{font-weight:600;letter-spacing:.08em}
+.wm-name small{font-size:12px;color:var(--wm-soft)}
+.wm-tog{flex:none;appearance:none;border:1px solid var(--wm-gold);background:#fff;color:var(--wm-ink);font:inherit;font-size:12.5px;
+  padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.wm-tog::after{content:" ▾";color:var(--wm-gold)}
+.wm.open .wm-tog::after{content:" ▴"}
+.wm-panel{display:none;max-width:1080px;margin:0 auto;padding:4px 16px 22px}
+.wm.open .wm-panel{display:block}
+.wm-lead{font-size:14px;margin:6px 0 16px;text-wrap:balance}
+.wm-h{font-size:12px;letter-spacing:.2em;color:var(--wm-gold);margin:0 0 8px}
+.wm-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:20px}
+.wm-card{position:relative;background:#fff;border:1px solid var(--wm-line);border-radius:12px;padding:14px 16px 14px}
+.wm-card.here{border:1.5px solid var(--wm-gold)}
+.wm-here{position:absolute;top:-10px;right:12px;background:var(--wm-gold);color:#fff;font-size:11px;padding:1px 10px;border-radius:999px;letter-spacing:.1em}
+.wm-ct{font-size:16px;font-weight:600;margin:0}
+.wm-cs{font-size:12px;color:var(--wm-soft);margin:0 0 6px}
+.wm-cd{font-size:13px;margin:0 0 6px;text-wrap:balance}
+.wm-cm{font-size:12px;color:var(--wm-soft);margin:0 0 10px}
+.wm-links{display:flex;flex-wrap:wrap;gap:6px}
+.wm-links a{font-size:12px;text-decoration:none;color:var(--wm-ink);border:1px solid var(--wm-line);border-radius:999px;padding:4px 12px;background:var(--wm-bg)}
+.wm-links a.main{background:var(--wm-ink);color:#fff;border-color:var(--wm-ink)}
+.wm-mem{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:18px}
+.wm-m{background:#fff;border:1px solid var(--wm-line);border-radius:12px;padding:10px 14px}
+.wm-mn{font-size:15px;font-weight:600;margin:0}
+.wm-mr{font-size:12px;color:var(--wm-soft);margin:0 0 6px}
+.wm-tags{display:flex;flex-wrap:wrap;gap:4px}
+.wm-tags span{font-size:11px;background:var(--wm-bg);border:1px solid var(--wm-line);border-radius:4px;padding:0 8px}
+.wm-rsv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:13px}
+.wm-rsv a{text-decoration:none;color:#fff;background:#06c755;border-radius:999px;padding:6px 16px;font-size:13px}
+.wm-nb{white-space:nowrap}
+@media (max-width:520px){.wm-name small{display:none}.wm-bar{padding:7px 12px}}
+</style>
+<div class="wm-bar">
+  <p class="wm-name" style="margin:0"><b>ウェルネスミューク</b><small>3人のセラピストの、ひとつのチームです</small></p>
+  <button type="button" class="wm-tog" aria-expanded="false" aria-controls="wm-panel">入口とメンバー</button>
+</div>
+<div class="wm-panel" id="wm-panel"></div>
+<script>
+(function(){
+/* ===== ここだけ書き換えればOK ===== */
+var WM_DATA={
+  line:"https://lin.ee/SBqauMf",
+  entrances:{
+    lulu:{name:"犬の整体テラス lulu,",sub:"犬の整体院",
+      desc:"わんちゃんの体を、飼い主さんと一緒に整える整体院です。",
+      place:"守口市 金下町（2026年12月オープン）",
+      members:["竹元晃嗣","鳥居美紀"],
+      lp:"https://chicchi10969-beep.github.io/mieuque/",ig:"takemoto.mieuque"},
+    cinderella:{name:"シンデレラ100人計画",sub:"Miki & Partners",
+      desc:"がんばりすぎている女性の、心と身体を整えます。先着100名・初回500円。",
+      place:"守口院（梅園町）",
+      members:["鳥居美紀","竹元晃嗣","山元美和"],
+      lp:"https://chicchi10969-beep.github.io/cinderella100/",ig:"miki_and_partners"},
+    jouka:{name:"浄化整体",sub:"竹元晃嗣",
+      desc:"違和感を取りのぞき、心と身体を自然体に戻す整体です。",
+      place:"",
+      members:["竹元晃嗣"],
+      lp:"",ig:""}
+  },
+  members:[
+    {name:"鳥居美紀",role:"オーナーセラピスト"},
+    {name:"竹元晃嗣",role:"柔道整復師・犬の整体師",roleJouka:"柔道整復師・犬の整体師・浄化整体"},
+    {name:"山元美和",role:"施術スタッフ・保育士"}
+  ],
+  /* そのページで見せる入口（浄化整体は lulu・シンデレラには出さない） */
+  show:{lulu:["lulu","cinderella"],cinderella:["cinderella","lulu"],jouka:["jouka","lulu","cinderella"]}
+};
+/* ===== ここまで ===== */
+var root=document.getElementById("wm-family");if(!root)return;
+var page=root.getAttribute("data-page");var list=WM_DATA.show[page]||[];
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var h='<p class="wm-lead">ウェルネスミュークは、3人のセラピストがひとつのチームとして、いくつかの<span class="wm-nb">入口（サロン・企画）</span>をもっています。<span class="wm-nb">どの入口からでも、</span><span class="wm-nb">同じメンバーがお迎えします。</span></p>';
+h+='<p class="wm-h">ENTRANCE ／ 入口</p><div class="wm-cards">';
+list.forEach(function(k){var e=WM_DATA.entrances[k];if(!e)return;var here=(k===page);
+  h+='<div class="wm-card'+(here?' here':'')+'">'+(here?'<span class="wm-here">いまここ</span>':'');
+  h+='<p class="wm-ct">'+esc(e.name)+'</p><p class="wm-cs">'+esc(e.sub)+'</p><p class="wm-cd">'+esc(e.desc)+'</p>';
+  h+='<p class="wm-cm">'+(e.place?esc(e.place)+'<br>':'')+'メンバー：'+e.members.map(esc).join('・')+'</p><div class="wm-links">';
+  if(e.lp&&!here)h+='<a class="main" href="'+esc(e.lp)+'" target="_blank" rel="noopener">このページを見る</a>';
+  if(e.ig)h+='<a href="https://www.instagram.com/'+esc(e.ig)+'/" target="_blank" rel="noopener">Instagram @'+esc(e.ig)+'</a>';
+  h+='</div></div>';});
+h+='</div><p class="wm-h">MEMBER ／ メンバー</p><div class="wm-mem">';
+WM_DATA.members.forEach(function(m){var tags=list.filter(function(k){return WM_DATA.entrances[k].members.indexOf(m.name)>-1}).map(function(k){return WM_DATA.entrances[k].name});
+  if(!tags.length)return;var role=(page==="jouka"&&m.roleJouka)?m.roleJouka:m.role;
+  h+='<div class="wm-m"><p class="wm-mn">'+esc(m.name)+'</p><p class="wm-mr">'+esc(role)+'</p><div class="wm-tags">'+tags.map(function(t){return'<span>'+esc(t)+'</span>'}).join('')+'</div></div>';});
+h+='</div><div class="wm-rsv"><span>ご予約・ご相談は<span class="wm-nb">どの入口も共通です</span></span><a href="'+esc(WM_DATA.line)+'" target="_blank" rel="noopener">公式LINEで相談</a></div>';
+document.getElementById("wm-panel").innerHTML=h;
+var tog=root.querySelector(".wm-tog");
+tog.addEventListener("click",function(){var o=root.classList.toggle("open");tog.setAttribute("aria-expanded",o?"true":"false")});
+function sh(){document.documentElement.style.setProperty("--wm-h",root.offsetHeight+"px")}sh();if(window.ResizeObserver)new ResizeObserver(sh).observe(root);window.addEventListener("load",sh);
+function hc(){if(location.hash==="#wm-family"){root.classList.add("open");tog.setAttribute("aria-expanded","true")}}hc();window.addEventListener("hashchange",hc);
+})();
+</script>
+</div>
+<!-- ===== ウェルネスミューク 共通案内パーツ（ここまで） ===== -->
+
 
 <main>
 <!-- ====== ヒーロー ====== -->
